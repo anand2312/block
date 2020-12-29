@@ -4,3 +4,4 @@ __pycache__
 *.dir
 *.db
 inspect.py
+dist
