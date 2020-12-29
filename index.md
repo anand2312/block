@@ -1,37 +1,71 @@
-## Welcome to GitHub Pages
+### Requirements
+Python 3.7 +
 
-You can use the [editor on GitHub](https://github.com/anand2312/block/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Installation
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+Installation can be done using `pip`
+```
+python -m pip install https://github.com/anand2312/block/archive/0.1.0.tar.gz
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+#### Note: Run all Block commands as administrator. 
+###### On Linux
+On Linux, running commands with admin permissions is as simple as adding `sudo` before the command
+```
+sudo python -m block
+```
+###### On Windows
+This isn't as easy on Windows.
+You will have to run either Command Prompt or Powershell **as administrator.**
+- Use `Ctrl + X`, which brings up a popup menu with many options. Pick `Powershell (Administrator)`
+- Search for `Command Prompt`/`cmd` in your search bar > Right click and `Run as administrator`.
+From here on, it will be assumed that you are running commands as administrator, and it won't be explicitly stated in the examples.
 
-### Jekyll Themes
+### Setup
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anand2312/block/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+Before you block any websites, you need to setup Block.
+To do so, open a command line window, and run the following command:
+```
+python -m block setup
+```
+This will begin an interactive setup session.
+
+### Usage
+
+##### Starting Block
+Starting Block is as simple as running 
+```
+python -m block start
+```
+This will begin an interactive sesssion, which will ask you to enter:
+- The websites to be blocked. You have to enter a space separated list of websites. For example, to block *youtube* and *instagram*, you would enter
+```
+www.youtube.com www.instagram.com
+```
+- The amount of time that these sites have to be blocked for:
+The time has to be entered like:
+For keeping sites blocked for 5 hours, you would enter `5h`
+For keeping sites blocked for 3 days, you would enter `3d`.
+The smallest supported unit of time currently is _hours_.
+
+##### Stopping Block
+You can stop blocking sites by running
+```
+python -m block stop
+```
+This will raise an error if the time you'd specified while starting hasn't elapsed yet.
+
+##### Editing time period
+In case you accidentally set the blocking time incorrectly, you can edit this by doing 
+```
+python -m block edit
+```
+Note that this new time is set from the time you're running the edit command.
+For example;
+If you used the `edit` command, and edited the time to be `3h`. Now you have to wait 3 hours more to stop it.
+This obviously means that if you want to immedietely stop the blocking, you have to run `edit` and enter `0h` as the time.
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Contact me on Discord: Ares#7286
+Make an issue on [Github](https://github.com/anand2312/block)
