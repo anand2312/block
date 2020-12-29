@@ -60,7 +60,7 @@ python -m block stop
 This will raise an error if the time you'd specified while starting hasn't elapsed yet.
 \
 **Note: Block does NOT automatically unblock sites after the time you specified has elapsed. It merely lets you to stop blocking by yourself.
-That is, if you try stopping blocking before the time is up, Block will raise an error, but after the time is up, you have to run `block stop` to gain back access to the sites.**
+That is, if you try stopping blocking before the time is up, Block will raise an error, but after the time is up, you have to run** `block stop` **to gain back access to the sites.**
 
 ##### Editing time period
 In case you accidentally set the blocking time incorrectly, you can edit this by doing 
