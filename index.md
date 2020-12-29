@@ -1,3 +1,4 @@
+# Welcome to Block!
 Block is a program to easily block out distracting websites.
 
 ### Requirements
