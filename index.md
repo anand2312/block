@@ -1,3 +1,5 @@
+Block is a program to easily block out distracting websites.
+
 ### Requirements
 Python 3.7 +
 
