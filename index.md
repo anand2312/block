@@ -20,7 +20,7 @@ sudo python -m block
 ###### On Windows
 This isn't as easy on Windows.
 You will have to run either Command Prompt or Powershell **as administrator.**
-- Use `Ctrl + X`, which brings up a popup menu with many options. Pick `Powershell (Administrator)`
+- Use `Win + X`, which brings up a popup menu with many options. Pick `Powershell (Administrator)`
 - Search for `Command Prompt`/`cmd` in your search bar > Right click and `Run as administrator`.
 From here on, it will be assumed that you are running commands as administrator, and it won't be explicitly stated in the examples.
 
@@ -57,6 +57,8 @@ You can stop blocking sites by running
 python -m block stop
 ```
 This will raise an error if the time you'd specified while starting hasn't elapsed yet.
+**Note: Block does NOT automatically unblock sites after the time you specified has elapsed. It merely lets you to stop blocking by yourself.
+That is, if you try stopping blocking before the time is up, Block will raise an error, but after the time is up, you have to run `block stop` to gain back access to the sites.**
 
 ##### Editing time period
 In case you accidentally set the blocking time incorrectly, you can edit this by doing 
