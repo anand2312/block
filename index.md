@@ -21,8 +21,9 @@ sudo python -m block
 This isn't as easy on Windows.
 You will have to run either Command Prompt or Powershell **as administrator.**
 - Use `Win + X`, which brings up a popup menu with many options. Pick `Powershell (Administrator)`
-- Search for `Command Prompt`/`cmd` in your search bar > Right click and `Run as administrator`.  
-From here on, it will be assumed that you are running commands as administrator, and it won't be explicitly stated in the examples.\
+- Search for `Command Prompt`/`cmd` in your search bar > Right click and `Run as administrator`.
+\
+From here on, it will be assumed that you are running commands as administrator, and it won't be explicitly stated in the examples.
 
 ### Setup
 
