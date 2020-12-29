@@ -4,8 +4,8 @@ from __future__ import annotations
 import shelve
 import pathlib
 
-import utils.input as ui
-import utils.exceptions as exc
+import block.utils.input as ui
+import block.utils.exceptions as exc
 
 def setup(user_os: str) -> None:
     if user_os == "Windows":
