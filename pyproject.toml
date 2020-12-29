@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "block"
+version = "0.1.0"
+description = "Easily block yourself from accessing distracting websites."
+authors = ["Anand Krishna <anandkrishna2312@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
