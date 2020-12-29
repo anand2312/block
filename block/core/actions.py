@@ -21,3 +21,8 @@ def stop() -> None:
     else:
         left = until - datetime.datetime.now()
         raise exc.InternalException(f"Time's not up! You have to wait {left}")
+
+def edit(new: datetime.datetime) -> None:
+    with shelve.open("data") as data:
+        data["UNTIL"] = new
+        

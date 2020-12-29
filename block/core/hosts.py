@@ -23,7 +23,7 @@ def rewrite_hosts(websites: list[str]) -> None:
 def reset_hosts() -> None:
     """Reset the hosts file back to what it was before."""
     with shelve.open("data") as data:
-        hosts_file = data["HOSTS_PATH"]
+        hosts_file = data["HOSTS_PATH"] / "hosts"
         original_data = data["ORIGINAL_HOSTS"]
         
     with hosts_file.open("w") as f:

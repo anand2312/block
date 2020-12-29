@@ -1,6 +1,7 @@
 """Command line interface to start/stop the website blocking."""
 import argparse
 
+import block
 from block.core import setup, actions
 from block.utils.input import *
 from block.utils import exceptions as exc
@@ -30,6 +31,16 @@ elif args.command == "start":
 elif args.command == "stop":
     actions.stop()
     print("Websites are accessible again!")
+elif args.command == "edit":
+    print("Enter new amount of time till blocking ends. Enter 0h to remove blocking.")
+    new_td = get_timedelta(input())
+    new_time = datetime.datetime.now() + new_td
+    actions.edit(new_time)
+    print("Edited!")
+elif args.command == "help":
+    print(f"Block v{block.__version__}")
+    print("Commands:")
+    print("\n".join(block.COMMANDS))
 else:
     raise exc.InternalException("Unknown command.")
 
