@@ -8,7 +8,7 @@ Python 3.7 +
 
 Installation can be done using `pip`
 ```
-python -m pip install https://github.com/anand2312/block/archive/0.1.0.tar.gz
+python -m pip install https://github.com/anand2312/block/archive/0.1.1.tar.gz
 ```
 
 #### Note: Run all Block commands as administrator. 
