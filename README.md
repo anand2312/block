@@ -7,7 +7,7 @@
 - `pip` 
 
 ### Future goals
-- GUI interface along with command line interface.
+- GUI along with command line interface.
 
 ### Contributing
 Clone this repository, make changes and send a PR this way! If you have any problems/questions, feel free to make an issue here.
