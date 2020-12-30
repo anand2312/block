@@ -6,6 +6,7 @@ import pathlib
 
 import block.utils.input as ui
 import block.utils.exceptions as exc
+from block.utils import get_block_path
 
 def setup(user_os: str) -> None:
     if user_os == "Windows":
@@ -20,7 +21,7 @@ def setup(user_os: str) -> None:
     with hosts_file.open() as f:
         original_hosts = f.read()
     
-    with shelve.open("data") as data:
+    with shelve.open(get_block_path() + "/data") as data:
         data["USER_OS"] = user_os
         data["HOSTS_PATH"] = path
         data["ORIGINAL_HOSTS"] = original_hosts

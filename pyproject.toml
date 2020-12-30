@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "block"
-version = "0.1.0"
+version = "0.1.1"
 description = "Easily block yourself from accessing distracting websites."
 authors = ["Anand Krishna <anandkrishna2312@gmail.com>"]
 license = "MIT"

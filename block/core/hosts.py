@@ -5,11 +5,11 @@ from __future__ import annotations
 import shelve
 import datetime
 
-from block.utils import exceptions as exc 
+from block.utils import exceptions as exc, get_block_path
 
 def rewrite_hosts(websites: list[str]) -> None:
     """Rewrites the hosts file to point the specified URLs to localhost."""
-    with shelve.open("data") as data:
+    with shelve.open(get_block_path() + "/data") as data:
         hosts_file = data["HOSTS_PATH"] / "hosts"
         original_data = data["ORIGINAL_HOSTS"]
         data["WEBSITES"] = websites
@@ -22,7 +22,7 @@ def rewrite_hosts(websites: list[str]) -> None:
     
 def reset_hosts() -> None:
     """Reset the hosts file back to what it was before."""
-    with shelve.open("data") as data:
+    with shelve.open(get_block_path() + "data") as data:
         hosts_file = data["HOSTS_PATH"] / "hosts"
         original_data = data["ORIGINAL_HOSTS"]
         
@@ -34,11 +34,11 @@ def log_time(action: str, until: datetime.datetime = None) -> None:
     action: start/stop, as a string."""
     if action == "start":
         now = datetime.datetime.now()
-        with shelve.open("data") as data:
+        with shelve.open(get_block_path() + "data") as data:
             data["START"] = now
             data["UNTIL"] = until
     elif action == "stop":
-        with shelve.open("data") as data:
+        with shelve.open(get_block_path() + "data") as data:
             del data["START"]
             del data["UNTIL"]
     else:
