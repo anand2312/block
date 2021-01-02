@@ -8,8 +8,8 @@ from block.core import hosts
 from block.utils import exceptions as exc, get_block_path 
 
 def start(websites: list[str], until: datetime.datetime) -> None:
-    hosts.log_time(action="start", until=until)
     hosts.rewrite_hosts(websites)
+    hosts.log_time(action="start", until=until)
 
 def stop() -> None:
     with shelve.open(get_block_path() + "/data") as data:
