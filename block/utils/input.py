@@ -17,18 +17,24 @@ def list_input(question: str) -> list[str]:
 
 def get_timedelta(arg: str) -> datetime.timedelta:
     """Converts a string of time for eg: 5h -> into an equivalent timedelta object."""
-    time_, unit = "", ""
-    for i in arg:
-        if i.isdigit():
-            time_ += i
-        else:
-            unit += i
-    else:
-        time_ = int(time_)
+    arg = arg.lower()
+    amts, units = [], []
 
-    if unit.lower().startswith("h"):
-        return datetime.timedelta(hours=time_)
-    elif unit.lower().startswith("d"):
-        return datetime.timedelta(days=time_)
-    else:
-        raise TypeError(f"Unsupported unit of time. Expecting `hours` or `days`, got {unit}")
+    unit_mapping = {
+        "h": "hours", "hour": "hours", 
+        "m": "minutes", "minute": "minutes",
+        "s": "seconds", "second": "seconds",
+        "d": "days", "day": "days",
+        "month": "months",     # m already assigned for minutes
+        "year": "years"
+    }
+    
+    grouped = groupby(arg, key=str.isdigit)
+    
+    for key, group in grouped:
+        if key:   # means isdigit returned true, meaning they are numbers
+            amts.append(int("".join(group)))
+        else:
+            units.append(unit_mapping["".join(group)])     # convert h -> hours, m -> minutes and so on
+    
+    return datetime.timedelta(**dict(zip(units, amts)))
