@@ -3,5 +3,8 @@ __pycache__
 *.bak
 *.dir
 *.db
-inspect.py
 dist/
+
+# Added by cargo
+
+/target
