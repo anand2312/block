@@ -1,6 +1,7 @@
 """Utilities to help with taking user inputs in the CLI."""
 from __future__ import annotations
 import datetime
+from itertools import groupby
 
 def choice_input(question: str, options: list[str]) -> str:
     """For situations where you want to provide a list of options for the user to choose from."""
